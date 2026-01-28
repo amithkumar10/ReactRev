@@ -1,8 +1,13 @@
-# React + Vite
+# ReactRev
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Welcome to ReactRev 🚀
+This repository is a structured revision and documentation of my React training and learning during my extended internship period at SST.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Access Details
+Visit: https://react-rev-rust.vercel.app/
+<br/>
+Username: amithkumar_10
+<br/>
+Password: React@rev
+<br/>
