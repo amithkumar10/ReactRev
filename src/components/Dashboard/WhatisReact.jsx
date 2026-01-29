@@ -1,12 +1,16 @@
 import React from 'react'
+import Hero from '../Common/Hero'
 
 const WhatisReact = () => {
   return (
     <div className='max-w-4xl mt-10'>
+
       <div>
-        <img className='w-4xl' src="/ReactHero.jpg" alt="" />
+        <Hero />
+          <h1 className="text-white font-semibold absolute  top-[70%] left-1/2 transform -translate-x-1/2 -translate-y-1/2">React</h1>
       </div>
-        <div className='mt-6'>
+      
+        <div className='mt-10'>
             <h2 className="md:text-4xl text-3xl font-bold text-justify">What is React?</h2>
         </div>
         <div className='flex flex-col gap-4'>

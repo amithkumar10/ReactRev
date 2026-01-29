@@ -17,26 +17,30 @@ const Navbar = () => {
   };
 
   const sections = [
-    { title: "Basics", items: ["JSX", "Components", "Props", "State", "Events", "Conditional Rendering"] },
-    { title: "Hooks", items: ["useState", "useEffect", "useContext", "useReducer", "useRef"] },
-    { title: "Routing", items: ["React Router", "Route Params", "Protected Routes", "useLocation"] },
-    { title: "API Calls", items: ["GET", "POST", "PUT", "DELETE"] },
-    { title: "Zustand", items: ["State Management"] },
+    { title: "Basics", items: [{heading:"JSX", link:"/basics"}, {heading:"Props", link:"/basics"}, {heading:"List & Keys", link:"/basics"}] },
+
+    { title: "Hooks", items: [{heading:"useState", link:"/hooks"}, {heading:"useEffect", link:"/hooks"}, {heading:"useContext", link:"/hooks"}, {heading:"useReducer", link:"/hooks"}, {heading:"useRef", link:"/hooks"}] },
+
+    { title: "Routing", items: [{heading:"React Router", link:"/routing"}, {heading:"Route Params", link:"/routing"}, {heading:"Protected Routes", link:"/routing"}, {heading:"useLocation", link:"/routing"}] },
+
+    { title: "API Calls", items: [{heading:"GET", link:"/apicall"}, {heading:"POST", link:"/apicall"}, {heading:"PUT", link:"/apicall"}, {heading:"DELETE", link:"/apicall"}] },
+    
+    { title: "Zustand", items: [{heading:"State Management", link:"/zustand"}] },
   ];
 
   return (
-    <div className="w-screen bg-black flex">
+    <div className="w-screen bg-black flex ">
       <div className="w-full flex justify-evenly items-center h-36">
         <h2
           className="font-bold text-3xl text-white cursor-pointer"
-          onClick={() => window.location.reload()}
+          onClick={() => navigate("/dashboard")}
         >
           ReactRev
         </h2>
 
-        <ul className="text-white flex gap-8 text-xl">
+        <ul className="text-white relative flex gap-8 text-xl">
           {sections.map((section, index) => (
-            <li key={section.title}>
+           <a href={section.items[0].link} className="text-decoration-none"> <li className="text-white" key={section.title}>
               <span
                 className=" cursor-pointer"
                 onMouseEnter={() => setOpenIndex(index)}
@@ -46,13 +50,13 @@ const Navbar = () => {
               </span>
 
               {openIndex === index && (
-                <ul className="mt-2 ml-4 text-lg cursor-pointer  absolute bg-white text-black rounded shadow-lg">
+                <ul   className="mt-2 ml-4 text-lg cursor-pointer z-index-50 absolute bg-white text-black rounded shadow-lg">
                   {section.items.map(item => (
-                    <li className="hover:bg-gray-200 py-2 px-10" key={item}>{item}</li>
+                   <a onMouseEnter={() => setOpenIndex(index)}   onMouseOut={()=> setOpenIndex(null)} href={item.link} > <li className="hover:bg-gray-200 py-2 px-10 text-gray-700" key={item.heading}>{item.heading}</li></a>
                   ))}
                 </ul>
               )}
-            </li>
+            </li> </a>
           ))}
 
          <div onClick={onClickNext} className='flex cursor-pointer '> 
