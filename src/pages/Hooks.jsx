@@ -5,8 +5,19 @@ import Footer from '../components/Common/Footer'
 import WhatHooks from '../components/Hooks/WhatHooks'
 import WhyHooks from '../components/Hooks/WhyHooks'
 import HowHook from '../components/Hooks/HowHook'
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Hooks = () => {
+      const navigate = useNavigate();
+      const authStatus = localStorage.getItem("authenticated") === "true";
+  
+      useEffect(()=>{
+          if(!authStatus){
+            navigate("/login");
+        }
+      }, []);
+
   return (
     <div  className='flex flex-col justify-start items-center w-full min-h-[100vh]'>
         <Navbar />

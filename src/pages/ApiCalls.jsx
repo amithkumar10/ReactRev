@@ -2,8 +2,18 @@ import React from 'react'
 import Navbar from '../components/Common/Navbar'
 import Hero from '../components/Common/Hero'
 import Footer from '../components/Common/Footer'
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const ApiCalls = () => {
+    const navigate = useNavigate();
+    const authStatus = localStorage.getItem("authenticated") === "true";
+
+    useEffect(()=>{
+        if(!authStatus){
+          navigate("/login");
+      }
+    }, []);
   return (
    <div  className='flex flex-col justify-start items-center w-full min-h-[100vh]'>
         <Navbar />
