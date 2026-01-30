@@ -9,6 +9,11 @@ import Hooks from "./pages/Hooks";
 import Routing from "./pages/Routing";
 import ApiCalls from "./pages/ApiCalls";
 import Zustand from "./pages/Zustand";
+import UseEffectHook from "./pages/UseEffectHook";
+import UseStateHook from "./pages/UseStateHook";
+import UseContextHook from "./pages/UseContextHook";
+import UseReducerHook from "./pages/UseReducerHook";
+import UseRefHook from "./pages/UseRefHook";
 
 const App = () => {
   return (
@@ -22,6 +27,11 @@ const App = () => {
         <Route path="/routing" element={<Routing />} />
         <Route path="/apicall" element={<ApiCalls />} />
         <Route path="/zustand" element={<Zustand />} />
+        <Route path="/hooks/useStateHook" element={<UseStateHook />} />
+        <Route path="/hooks/useEffectHook" element={<UseEffectHook />} />
+        <Route path="/hooks/useContextHook" element={<UseContextHook />} />
+        <Route path="/hooks/useReducerHook" element={<UseReducerHook />} />
+        <Route path="/hooks/useRefHook" element={<UseRefHook />} />
       </Routes>
     </div>
   );

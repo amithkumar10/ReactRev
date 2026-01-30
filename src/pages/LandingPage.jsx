@@ -5,7 +5,7 @@ const LandingPage = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen w-screen bg-white flex items-center justify-center px-4">
+    <div className="min-h-screen w-screen bg-black flex items-center justify-center px-4">
       <div className="max-w-7xl w-full flex flex-col md:flex-row items-center justify-between gap-12">
 
         {/* LHS */}
@@ -17,7 +17,7 @@ const LandingPage = () => {
             ReactRev
           </h2>
 
-          <h1 className="font-semibold text-xl md:text-6xl mb-3">
+          <h1 className="font-semibold  text-xl md:text-6xl mb-3">
             Welcome!
           </h1>
 
@@ -28,7 +28,7 @@ const LandingPage = () => {
           </h3>
 
           <button
-            className="mt-6 px-6 py-2 bg-black text-white rounded-md border border-black hover:bg-white hover:text-black transition"
+            className="mt-6 px-6 py-2 bg-black text-white rounded-md border border-black  transition"
             onClick={() => navigate("/login")}
           >
             Get Started

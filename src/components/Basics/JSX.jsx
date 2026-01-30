@@ -11,7 +11,7 @@ const JSX = () => {
 
         <div className='mt-4'>
             <h3 className='font-semibold'>Example - JSX used to write this component</h3>
-            <pre className='bg-gray-200 p-4 rounded-lg overflow-x-auto'>
+            <pre className='bg-gray-800 p-4 rounded-lg overflow-x-auto'>
 {`import React from 'react';
 const JSX = () => {
   return (

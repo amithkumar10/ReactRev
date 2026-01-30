@@ -19,7 +19,7 @@ const Navbar = () => {
   const sections = [
     { title: "Basics", items: [{heading:"JSX", link:"/basics"}, {heading:"Props", link:"/basics"}, {heading:"List & Keys", link:"/basics"}] },
 
-    { title: "Hooks", items: [{heading:"useState", link:"/hooks"}, {heading:"useEffect", link:"/hooks"}, {heading:"useContext", link:"/hooks"}, {heading:"useReducer", link:"/hooks"}, {heading:"useRef", link:"/hooks"}] },
+    { title: "Hooks", items: [{ link:"/hooks" },{heading:"useState", link:"/hooks/useStateHook"}, {heading:"useEffect", link:"/hooks/useEffectHook"}, {heading:"useContext", link:"/hooks/useContextHook"}, {heading:"useReducer", link:"/hooks/useReducerHook"}, {heading:"useRef", link:"/hooks/useRefHook"}] },
 
     { title: "Routing", items: [{heading:"React Router", link:"/routing"}, {heading:"Route Params", link:"/routing"}, {heading:"Protected Routes", link:"/routing"}, {heading:"useLocation", link:"/routing"}] },
 
@@ -29,7 +29,7 @@ const Navbar = () => {
   ];
 
   return (
-    <div className="w-screen bg-black flex ">
+    <div className="w-screen bg-black flex border-b-[0.5px] border-gray-600 ">
       <div className="w-full flex justify-evenly items-center h-36">
         <h2
           className="font-bold text-3xl text-white cursor-pointer"

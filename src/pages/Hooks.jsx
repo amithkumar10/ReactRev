@@ -7,6 +7,7 @@ import WhyHooks from '../components/Hooks/WhyHooks'
 import HowHook from '../components/Hooks/HowHook'
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import ImpHooks from '../components/Hooks/ImpHooks'
 
 const Hooks = () => {
       const navigate = useNavigate();
@@ -30,6 +31,7 @@ const Hooks = () => {
         <WhatHooks />
         <WhyHooks />
         <HowHook />
+        <ImpHooks />
 
       </div>
 
