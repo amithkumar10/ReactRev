@@ -14,6 +14,7 @@ import UseStateHook from "./pages/UseStateHook";
 import UseContextHook from "./pages/UseContextHook";
 import UseReducerHook from "./pages/UseReducerHook";
 import UseRefHook from "./pages/UseRefHook";
+import CustomHooks from "./pages/CustomHooks";
 
 const App = () => {
   return (
@@ -32,6 +33,7 @@ const App = () => {
         <Route path="/hooks/useContextHook" element={<UseContextHook />} />
         <Route path="/hooks/useReducerHook" element={<UseReducerHook />} />
         <Route path="/hooks/useRefHook" element={<UseRefHook />} />
+        <Route path="/hooks/customHooks" element={<CustomHooks />} />
       </Routes>
     </div>
   );

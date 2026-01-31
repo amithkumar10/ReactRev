@@ -2,8 +2,8 @@ import React from 'react'
 import { useLocation } from 'react-router-dom'
 
 const UseLocationHook = () => {
-    const location = useLocation();
-    console.log(location.pathname);
+    // const location = useLocation();
+    // console.log(location.pathname);
     return (
         <div className='w-full'>
             <div className='mt-10'>

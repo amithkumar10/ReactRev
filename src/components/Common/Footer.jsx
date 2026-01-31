@@ -13,7 +13,7 @@ const Footer = () => {
                 <div >
                     <div className='flex gap-16 justify-between'>
                         <div className='text-white '>
-                            <text className='font-semibold text-lg '>Links</text>
+                            <p className='font-semibold text-lg '>Links</p>
                             <ul className='font-light mt-3 text-md cursor-pointer'>
                                 <li>Basics</li>
                                 <li>Hooks</li>
@@ -25,7 +25,7 @@ const Footer = () => {
                         </div>
 
                         <div className='text-white'>
-                            <text className='font-semibold text-lg '>Connect</text>
+                            <p className='font-semibold text-lg '>Connect</p>
                             <ul className='font-light mt-3 text-md cursor-pointer'>
                                 <li>Linkedin</li>
                                 <li>Instagram</li>
@@ -34,7 +34,7 @@ const Footer = () => {
                         </div>
 
                         <div className='text-white'>
-                            <text className='font-semibold text-lg'>Developer</text>
+                            <p className='font-semibold text-lg'>Developer</p>
                             <div className='font-light mt-3 text-md'>
                                 <p>Amith Kumar</p>
                                 <p className='mt-2'>© 2026 ReactRev. All rights reserved.</p>

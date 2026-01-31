@@ -19,7 +19,7 @@ const Navbar = () => {
   const sections = [
     { title: "Basics", items: [{heading:"JSX", link:"/basics"}, {heading:"Props", link:"/basics"}, {heading:"List & Keys", link:"/basics"}] },
 
-    { title: "Hooks", items: [{ link:"/hooks" },{heading:"useState", link:"/hooks/useStateHook"}, {heading:"useEffect", link:"/hooks/useEffectHook"}, {heading:"useContext", link:"/hooks/useContextHook"}, {heading:"useReducer", link:"/hooks/useReducerHook"}, {heading:"useRef", link:"/hooks/useRefHook"}] },
+    { title: "Hooks", items: [{ link:"/hooks" },{heading:"useState", link:"/hooks/useStateHook"}, {heading:"useEffect", link:"/hooks/useEffectHook"}, {heading:"useContext", link:"/hooks/useContextHook"}, {heading:"useReducer", link:"/hooks/useReducerHook"}, {heading:"useRef", link:"/hooks/useRefHook"}, {heading:"Custom Hooks", link:"/hooks/customHooks"}] },
 
     { title: "Routing", items: [{heading:"React Router", link:"/routing"}, {heading:"Route Params", link:"/routing"}, {heading:"Protected Routes", link:"/routing"}, {heading:"useLocation", link:"/routing"}] },
 
@@ -40,7 +40,7 @@ const Navbar = () => {
 
         <ul className="text-white relative flex gap-8 text-xl">
           {sections.map((section, index) => (
-           <a href={section.items[0].link} className="text-decoration-none"> <li className="text-white" key={section.title}>
+           <a key={section.title} href={section.items[0].link} className="text-decoration-none"> <li className="text-white" key={section.title}>
               <span
                 className=" cursor-pointer"
                 onMouseEnter={() => setOpenIndex(index)}
@@ -52,7 +52,7 @@ const Navbar = () => {
               {openIndex === index && (
                 <ul   className="mt-2 ml-4 text-lg cursor-pointer z-index-50 absolute bg-white text-black rounded shadow-lg">
                   {section.items.map(item => (
-                   <a onMouseEnter={() => setOpenIndex(index)}   onMouseOut={()=> setOpenIndex(null)} href={item.link} > <li className="hover:bg-gray-200 py-2 px-10 text-gray-700" key={item.heading}>{item.heading}</li></a>
+                   <a  onMouseEnter={() => setOpenIndex(index)}   onMouseOut={()=> setOpenIndex(null)} href={item.link} > <li className="hover:bg-gray-200 py-2 px-10 text-gray-700" key={item.heading}>{item.heading}</li></a>
                   ))}
                 </ul>
               )}
