@@ -1,5 +1,6 @@
 import React from 'react'
 import ComponentA from './PropDrilling/ComponentA'
+import ContextComponentA from './ContextImplementation/ContextComponentA'
 
 const ContextInfo = () => {
   return (
@@ -29,10 +30,25 @@ const ContextInfo = () => {
                 <h2 className='text-4xl font-bold '>How useContext Hook Works?</h2>
                 <p className='text-justify mb-4'>You create a context using createContext, wrap part of your app with a Provider, and pass a value to it. Any child component can then access that value using useContext. When the provider's value changes, all consuming components re-render automatically.</p>
 
-                <pre className='bg-gray-800 p-5'>{`const [count, setCount] = useState(0);
-            
-// setCount is the setter function that updates the count value`}</pre>
+                <pre className='bg-gray-800 p-5'>{` //Creating Context in Parent Component (Component A)
+                
+const ThemeContext = createContext();
+
+<ThemeContext.Provider value="dark">
+  <App />
+</ThemeContext.Provider>
+`}</pre>
+
+<pre className='bg-gray-800 p-5 my-5'>{` //Component D (or any nested component)
+const theme = useContext(ThemeContext);
+`}</pre>
             </div>
+
+             <div className='mb-5'>
+                  <h3 className='font-semibold mb-2'>Example of useContext Hook</h3>
+                  <pre className='bg-gray-800 p-5'>
+                    {`//Check Code`}<ContextComponentA /></pre>
+                </div>
         </div>
   )
 }
