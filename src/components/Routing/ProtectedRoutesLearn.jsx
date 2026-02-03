@@ -1,6 +1,6 @@
 import React from 'react'
 
-const ProtectedRoutes = () => {
+const ProtectedRoutesLearn = () => {
   return (
    <div className='w-full'>
             <div className='mt-10'>
@@ -20,4 +20,4 @@ const ProtectedRoutes = () => {
   )
 }
 
-export default ProtectedRoutes
+export default ProtectedRoutesLearn

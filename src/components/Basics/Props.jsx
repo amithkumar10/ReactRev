@@ -118,6 +118,38 @@ function Child({ age }) {
 
 
       </div>
+
+      <div>
+       <div>
+         <h3 className='text-2xl font-bold mt-4'>Children</h3>
+       </div>
+
+       <p className='text-justify'>
+        In React, children is a special prop that represents whatever you put between a component’s opening and closing tags. Instead of passing data explicitly, React automatically sends that inner content to the component as props.children. This allows a component to act like a wrapper or container, where the parent decides what content goes inside, and the component decides how it should be displayed. This pattern is mainly used for reusable UI layouts like cards, modals, buttons, and page layouts.
+       </p>
+
+       <pre className='bg-gray-800 p-4 mt-3'>
+        {`function Card(props) {
+  return <div className="card">{props.children}</div>;
+}
+
+<Card>
+  <h1>Hello</h1>
+  <p>World</p>
+</Card>
+
+------------------------------
+
+// Renders as:
+<div className="card">
+  <h1>Hello</h1>
+  <p>World</p>
+</div>
+
+//Output: Hello World
+`}
+       </pre>
+      </div>
     </div>
   )
 }

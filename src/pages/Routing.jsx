@@ -6,19 +6,11 @@ import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import ReactRouter from '../components/Routing/ReactRouter';
 import RouteParams from '../components/Routing/RouteParams';
-import ProtectedRoutes from '../components/Routing/ProtectedRoutes';
+import ProtectedRoutesLearn from '../components/Routing/ProtectedRoutesLearn';
 import UseLocationHook from '../components/Routing/UseLocationHook';
 
 const Routing = () => {
-    const navigate = useNavigate();
-      const authStatus = localStorage.getItem("authenticated") === "true";
     
-  
-      useEffect(()=>{
-          if(!authStatus){
-            navigate("/login");
-        }
-      }, []);
   return (
      <div  className='flex flex-col justify-start items-center w-full min-h-[100vh]'>
         <Navbar />
@@ -31,7 +23,7 @@ const Routing = () => {
 
           <ReactRouter />
           <RouteParams />
-          <ProtectedRoutes />
+          <ProtectedRoutesLearn />
           <UseLocationHook />
 
         </div>

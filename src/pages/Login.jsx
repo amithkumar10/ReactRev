@@ -1,31 +1,29 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useState } from 'react';
+import useAuth from '../context/useAuth';
 
 const Login = () => {
-    const navigate = useNavigate();
 
-    const [username, setUsername] = useState("");
-    const [password, setPassword] = useState("");
-    const [success, setSuccess] = useState(false);
+const { login } = useAuth();
+  const navigate = useNavigate();
 
-    const handleSubmit = (e)=>{
-        e.preventDefault();
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
 
-        if(username === "amithkumar_10" && password === "React@rev"){
-            setSuccess(true);
-            alert("Login Successful!");
-            navigate("/dashboard");
-        }else{
-            alert("Invalid Credentials. Please try again.");
-            setPassword("");
-            setUsername("");
-        }
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (username === "admin" && password === "admin123") {
+      login({ username, role: "admin" });
+      navigate("/admin");
+    } else if (username === "user" && password === "user123") {
+      login({ username, role: "user" });
+      navigate("/dashboard");
+    } else {
+      alert("Invalid credentials");
     }
-
-    if(success){
-        localStorage.setItem("authenticated", "true");
-    }
+  };
 
     
   return (

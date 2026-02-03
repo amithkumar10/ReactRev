@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import useAuth from "../../context/useAuth";
 
 const Navbar = () => {
   const navigate = useNavigate();
   const [openIndex, setOpenIndex] = useState(null);
+  const {logout} = useAuth();
 
   const onClickLogout = () => {
-    localStorage.removeItem("authenticated");
-    alert("Logged out successfully!");
-    navigate("/login");
+    logout();
   };
 
   const onClickNext = () => {
