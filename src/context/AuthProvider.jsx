@@ -9,11 +9,10 @@ const AuthProvider = ({ children }) => {
   useEffect(() => {
     const storedUser = Cookies.get("user");
     if (storedUser) {
-  
       setUser(JSON.parse(storedUser));
-  
     }
     setLoaded(true);
+    
   }, []);
 
 const login = (userData) => {

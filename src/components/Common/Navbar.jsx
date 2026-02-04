@@ -52,7 +52,7 @@ const Navbar = () => {
               {openIndex === index && (
                 <ul   className="mt-2 ml-4 text-lg cursor-pointer z-index-50 absolute bg-white text-black rounded shadow-lg">
                   {section.items.map(item => (
-                   <a  onMouseEnter={() => setOpenIndex(index)}   onMouseOut={()=> setOpenIndex(null)} href={item.link} > <li className="hover:bg-gray-200 py-2 px-10 text-gray-700" key={item.heading}>{item.heading}</li></a>
+                   <a key={item.heading}  onMouseEnter={() => setOpenIndex(index)}   onMouseOut={()=> setOpenIndex(null)} href={item.link} > <li className="hover:bg-gray-200 py-2 px-10 text-gray-700" key={item.heading}>{item.heading}</li></a>
                   ))}
                 </ul>
               )}
