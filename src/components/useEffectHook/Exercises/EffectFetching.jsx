@@ -15,8 +15,12 @@ const EffectFetching = () => {
         });
     }, [])
   return (
-    <div className='border-2 border-white p-5 max-w-72'>
-      {data ? (
+    <div className=' max-w-72'>
+      <h2 className='text-white font-semibold mb-4'>
+        Exercise 3 - Fetching Data
+      </h2>
+     <div className='border-2 border-white p-5 max-w-72'>
+       {data ? (
         <ul>
           {data.map((item) => (
             <li key={item.id}>{item.title}</li>
@@ -25,6 +29,7 @@ const EffectFetching = () => {
       ) : (
         <p>Loading...</p>
       )}
+     </div>
     </div>
   )
 }
