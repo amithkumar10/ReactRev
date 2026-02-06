@@ -28,7 +28,7 @@ const Get = () => {
     <div className='mb-10'>
         <div className='bg-gray-600 p-5 rounded-b-none rounded-md flex justify-between  mt-6'>
             <h2 className='text-4xl font-bold' >Get Request</h2>
-            <button onClick={handleClick}>Send Request</button>
+            <button onClick={handleClick}>Send </button>
         </div>
 
         <div className='h-auto rounded-t-none rounded-md'>
