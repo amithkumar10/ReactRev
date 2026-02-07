@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useState } from "react";
 
 const Patch = () => {
+  const [loading, setLoading] = useState(false);
   const [data, setData] = useState({
     userId: "",
     title: "",
@@ -11,6 +12,7 @@ const Patch = () => {
 
   const handleSubmit = (e)=>{
     e.preventDefault();
+    setLoading(true);
     console.log(data);
 
     axios.patch(`https://jsonplaceholder.typicode.com/posts/${data.userId}`,{
@@ -18,6 +20,7 @@ const Patch = () => {
       title: data.title,
     }).then((res)=>{
       if(res.status === 200){
+        setLoading(false);
         alert("Data updated successfully");
       }
       console.log(res.data);
@@ -52,7 +55,7 @@ const Patch = () => {
           />
 
           <button type="submit" className="h-10">
-            Send
+           {loading ? "Updating..." : "Send"}
           </button>
         </form>
       </div>

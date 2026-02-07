@@ -3,14 +3,18 @@ import axios from "axios";
 import { useState } from "react";
 
 const Delete = () => {
+  const [getLoading, setGetLoading] = useState(false);
+  const [delLoading, setDelLoading] = useState(false);
   const [posts, setPosts] = useState([]);
 
 
   const handleClick = () => {
+    setGetLoading(true);
 
     axios.get('https://jsonplaceholder.typicode.com/posts').then(
       (res) => {
         setPosts(res.data.slice(1, 4));
+        setGetLoading(false);
         console.log(res.data.slice(1, 4));
       }
     ).catch((err) => {
@@ -22,12 +26,15 @@ const Delete = () => {
 
   const handleDelete = (id) => {
     console.log(id);
+    setDelLoading(true);
     axios.delete(`https://jsonplaceholder.typicode.com/posts/${id}`).then((res) => {
       if (res.status === 200) {
         const ok = confirm("Are you sure you want to delete this post?")
         if (ok) { setPosts(posts.filter((post) => post.id !== id)); }
       }
-    }).catch((err) => {
+      setDelLoading(false);
+    }).catch((err) =>{
+      setDelLoading(false);
       console.log(err);
     })
   }
@@ -45,7 +52,7 @@ const Delete = () => {
            */}
 
         <button onClick={handleClick} className="">
-          Get Posts
+          {getLoading ? "Loading..." : "Get Posts"}
         </button>
       </div>
 
@@ -54,7 +61,7 @@ const Delete = () => {
           <div key={post.title} className={`mb-3 bg-gray-800 p-5`}>
             <div className="flex justify-between">
               <h2 className="text-2xl font-bold">{post.title} {post.id}</h2>
-              <button onClick={() => { handleDelete(post.id) }}>Delete</button>
+              <button onClick={() => { handleDelete(post.id) }}>{delLoading ? "Deleting..." : "Delete"}</button>
             </div>
             <p>{post.body}</p>
           </div>

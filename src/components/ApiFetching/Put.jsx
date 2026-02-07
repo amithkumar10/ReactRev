@@ -3,6 +3,7 @@ import axios from "axios";
 import { useState } from "react";
 
 const Put = () => {
+    const [loading, setLoading] = useState(false);
     const [data, setData] = useState({
         userId: "",
         title: "",
@@ -11,6 +12,7 @@ const Put = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        setLoading(true);
         console.log(data);
 
         axios.put(('https://jsonplaceholder.typicode.com/posts/1'), {
@@ -19,6 +21,7 @@ const Put = () => {
             body: data.body,
         }).then((res)=>{
             if(res.status === 200){
+                setLoading(false);
                 alert("Data updated successfully");
             }
             console.log(res.data);
@@ -65,7 +68,7 @@ const Put = () => {
           
 
           <button type="submit" className="h-10">
-            Send
+            {loading ? "Updating..." : "Send"}
           </button>
         </form>
       </div>

@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useState } from "react";
 
 const Post = () => {
+const [loading, setLoading] = useState(false);
 const [data, setData] = useState({
   userId: "",
   title: "",
@@ -10,6 +11,7 @@ const [data, setData] = useState({
 
   const handleSubmit  = (e)=>{
     e.preventDefault();
+    setLoading(true);
     console.log(data);
 
     axios.post('https://jsonplaceholder.typicode.com/posts', {
@@ -18,6 +20,7 @@ const [data, setData] = useState({
       body: data.body,
     }).then((res)=>{
       if(res.status === 201){
+        setLoading(false);
         alert("Data posted successfully");
       }
       setData({
@@ -60,8 +63,8 @@ const [data, setData] = useState({
             onChange={(e)=> setData({...data, body: e.target.value})}
           />
 
-          <button type="submit" className="h-10">
-            Send
+          <button  type="submit" className="h-10">
+          {loading? "Posting...":"Send"}
           </button>
         </form>
       </div>
