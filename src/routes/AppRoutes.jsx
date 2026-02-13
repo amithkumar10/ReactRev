@@ -12,7 +12,6 @@ import Zustand from "../pages/Zustand";
 import UseEffectHook from "../pages/UseEffectHook";
 import UseStateHook from "../pages/UseStateHook";
 import UseContextHook from "../pages/UseContextHook";
-import UseReducerHook from "../pages/UseReducerHook";
 import UseRefHook from "../pages/UseRefHook";
 import CustomHooks from "../pages/CustomHooks";
 import Admin from "../pages/Admin";
@@ -42,7 +41,6 @@ const AppRoutes = () => {
         <Route path="/hooks/useStateHook" element={<UseStateHook />} />
         <Route path="/hooks/useEffectHook" element={<UseEffectHook />} />
         <Route path="/hooks/useContextHook" element={<UseContextHook />} />
-        <Route path="/hooks/useReducerHook" element={<UseReducerHook />} />
         <Route path="/hooks/useRefHook" element={<UseRefHook />} />
         <Route path="/hooks/customHooks" element={<CustomHooks />} />
        </Route>

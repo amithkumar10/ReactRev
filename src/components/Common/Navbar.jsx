@@ -19,7 +19,7 @@ const Navbar = () => {
   const sections = [
     { title: "Basics", items: [{heading:"JSX", link:"/basics"}, {heading:"Props", link:"/basics"}, {heading:"List & Keys", link:"/basics"}] },
 
-    { title: "Hooks", items: [{ link:"/hooks" },{heading:"useState", link:"/hooks/useStateHook"}, {heading:"useEffect", link:"/hooks/useEffectHook"}, {heading:"useContext", link:"/hooks/useContextHook"}, {heading:"useReducer", link:"/hooks/useReducerHook"}, {heading:"useRef", link:"/hooks/useRefHook"}, {heading:"Custom Hooks", link:"/hooks/customHooks"}] },
+    { title: "Hooks", items: [{ link:"/hooks" },{heading:"useState", link:"/hooks/useStateHook"}, {heading:"useEffect", link:"/hooks/useEffectHook"}, {heading:"useContext", link:"/hooks/useContextHook"},  {heading:"useRef", link:"/hooks/useRefHook"}, {heading:"Custom Hooks", link:"/hooks/customHooks"}] },
 
     { title: "Routing", items: [{heading:"React Router", link:"/routing"}, {heading:"Route Params", link:"/routing"}, {heading:"Protected Routes", link:"/routing"}, {heading:"useLocation", link:"/routing"}] },
 

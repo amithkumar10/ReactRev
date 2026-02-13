@@ -4,7 +4,7 @@ import { useState } from "react";
 
 const Delete = () => {
   const [getLoading, setGetLoading] = useState(false);
-  const [delLoading, setDelLoading] = useState(false);
+  const [delLoading, setDelLoading] = useState(null);
   const [posts, setPosts] = useState([]);
 
 
@@ -26,13 +26,13 @@ const Delete = () => {
 
   const handleDelete = (id) => {
     console.log(id);
-    setDelLoading(true);
+    setDelLoading(id);
     axios.delete(`https://jsonplaceholder.typicode.com/posts/${id}`).then((res) => {
       if (res.status === 200) {
         const ok = confirm("Are you sure you want to delete this post?")
         if (ok) { setPosts(posts.filter((post) => post.id !== id)); }
       }
-      setDelLoading(false);
+      setDelLoading(null);
     }).catch((err) =>{
       setDelLoading(false);
       console.log(err);
@@ -61,7 +61,7 @@ const Delete = () => {
           <div key={post.title} className={`mb-3 bg-gray-800 p-5`}>
             <div className="flex justify-between">
               <h2 className="text-2xl font-bold">{post.title} {post.id}</h2>
-              <button onClick={() => { handleDelete(post.id) }}>{delLoading ? "Deleting..." : "Delete"}</button>
+              <button onClick={() => { handleDelete(post.id) }}>{delLoading === post.id ? "Deleting..." : "Delete"}</button>
             </div>
             <p>{post.body}</p>
           </div>
