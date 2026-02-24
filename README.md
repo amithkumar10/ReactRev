@@ -8,9 +8,8 @@ This project serves as a complete React revision handbook — from fundamentals 
 
 ## 🔐 Access Details
 - Live Demo: https://react-rev-rust.vercel.app/
-
-- Username: user
-- Password: user123
+- Username: `user`
+- Password: `user123`
 
 ## 📚 What I Learned in React
 ### 1️⃣ React Fundamentals
