@@ -10,7 +10,7 @@ import Put from '../components/ApiFetching/Put';
 import Post from '../components/ApiFetching/Post';
 import Patch from '../components/ApiFetching/Patch';
 import Search from '../components/ApiFetching/Search';
-
+import Throttling from '../components/ApiFetching/Throttling';
 
 const ApiCalls = () => {
 
@@ -29,7 +29,7 @@ const ApiCalls = () => {
           <Patch />
           <Delete />
           <Search />
-
+          <Throttling />
         </div>
 
       </div>

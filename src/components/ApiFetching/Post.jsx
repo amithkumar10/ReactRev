@@ -1,38 +1,27 @@
-import axios from "axios";
 import React, { useState } from "react";
+import usePost from "../CustomHooks/Hooks/usePost";
 
 const Post = () => {
-const [loading, setLoading] = useState(false);
-const [data, setData] = useState({
-  userId: "",
-  title: "",
-  body: "",
-})
+  const [formData, setFormData] = useState({
+    userId: "",
+    title: "",
+    body: "",
+  });
 
-  const handleSubmit  = (e)=>{
+  const { loading, error, postData } = usePost(
+    "https://jsonplaceholder.typicode.com/posts"
+  );
+
+  const handleSubmit = (e) => {
     e.preventDefault();
-    setLoading(true);
-    console.log(data);
+    postData(formData);
+    setFormData({
+      userId: "",
+      title: "",
+      body: "",
+    });
+  };
 
-    axios.post('https://jsonplaceholder.typicode.com/posts', {
-      userId: data.userId,
-      title: data.title,
-      body: data.body,
-    }).then((res)=>{
-      if(res.status === 201){
-        setLoading(false);
-        alert("Data posted successfully");
-      }
-      setData({
-        userId: "",
-        title: "",
-        body: "",
-      });
-      console.log(res.data);
-    }).catch((err)=>{
-      console.log(err);
-    })  
-  }
   return (
     <div className="mb-10">
       <div className="bg-gray-600 p-5 rounded-b-none rounded-md flex justify-evenly items-center gap-2 mt-6">
@@ -40,39 +29,43 @@ const [data, setData] = useState({
 
         <form onSubmit={handleSubmit} className="flex gap-2">
           <input
+          className="w-40 border-white border-1 px-2"
             type="text"
-            className="h-10 border-1 p-3 border-white max-w-40"
             placeholder="Enter userId"
-            value={data.userId}
-            onChange={(e)=> setData({...data, userId: e.target.value})}
+            value={formData.userId}
+            onChange={(e) =>
+              setFormData({ ...formData, userId: e.target.value })
+            }
           />
 
           <input
+            className="w-40 border-white border-1 px-2"
             type="text"
-            className="h-10 border-1 p-3 border-white max-w-40"
             placeholder="Enter title"
-            value={data.title}
-            onChange={(e)=> setData({...data, title: e.target.value})}
+            value={formData.title}
+            onChange={(e) =>
+              setFormData({ ...formData, title: e.target.value })
+            }
           />
 
           <input
+            className="w-40 border-white border-1 px-2"
             type="text"
-            className="h-10 border-1 p-3 border-white max-w-40"
             placeholder="Enter body"
-            value={data.body}
-            onChange={(e)=> setData({...data, body: e.target.value})}
+            value={formData.body}
+            onChange={(e) =>
+              setFormData({ ...formData, body: e.target.value })
+            }
           />
 
-          <button  type="submit" className="h-10">
-          {loading? "Posting...":"Send"}
+          <button type="submit">
+            {loading ? "Posting..." : "Send"}
           </button>
         </form>
       </div>
 
-      <div className="h-auto rounded-t-none rounded-md">
-        <pre className="p-5 rounded-t-none rounded-md overflow-x-auto bg-gray-800">
-          
-        </pre>
+      <div className="bg-gray-800 p-6 rounded-t-none rounded-md ">
+      
       </div>
     </div>
   );

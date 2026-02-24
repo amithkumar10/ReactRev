@@ -1,35 +1,62 @@
-import React from 'react'
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import useDebounce from "../CustomHooks/Hooks/useDebounce";
 
 const Search = () => {
+  const [query, setQuery] = useState("");
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(false);
+
+  const debouncedQuery = useDebounce(query, 500);
+
+  useEffect(() => {
+    if (!debouncedQuery) {
+      setProducts([]);
+      return;
+    }
+
+    const fetchProducts = async () => {
+      try {
+        setLoading(true);
+        const res = await axios.get(
+          `https://dummyjson.com/products/search?q=${debouncedQuery}`
+        );
+        setProducts(res.data.products.slice(0, 5));
+      } catch (err) {
+        console.log(err);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchProducts();
+  }, [debouncedQuery]);
+
   return (
     <div className="mb-10">
-      <div className="bg-gray-600 p-5 rounded-b-none rounded-md flex justify-between items-center gap-2 mt-6">
-        <h2 className="text-4xl font-bold">Search Request</h2>
-        <form className="flex gap-2">
-          <input
-            type="text"
-            className="h-10 border-1 p-3 border-white max-w-40"
-            placeholder="Enter userId"
-          />
+      <div className="bg-gray-600 p-5 rounded-md mt-6">
+        <h2 className="text-4xl font-bold mb-3">Search Request</h2>
 
+        <input
+          type="text"
+          className="h-10 p-3 border-white w-full border-1  text-white"
+          placeholder="Search products..."
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+        />
 
-{/* https://dummyjson.com/products/search?q=phone */}
+        {loading && <p className="mt-2">Searching...</p>}
 
-        
-
-          <button type="submit" className="h-10">
-            Send
-          </button>
-        </form>
-      </div>
-
-      <div className="h-auto rounded-t-none rounded-md">
-        <pre className="p-5 rounded-t-none rounded-md overflow-x-auto bg-gray-800">
-        
-        </pre>
+        <div className="mt-3 bg-gray-800 rounded-md">
+          {products.map((product) => (
+            <div key={product.id} className="p-2 border-b border-gray-700">
+              {product.title}
+            </div>
+          ))}
+        </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Search
+export default Search;
