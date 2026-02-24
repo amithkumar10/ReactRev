@@ -2,14 +2,50 @@
 
 # ⚛️ ReactRev
 
-## Welcome to ReactRev 🚀
-This repository is a structured revision and documentation of my React training and learning during my extended internship period at SST.
+## 🚀 Overview
+ReactRev is a structured revision and documentation repository covering everything I learned in React during my extended internship at SST.
+This project serves as a complete React revision handbook — from fundamentals to advanced state management and performance optimization.
 
+## 🔐 Access Details
+- Live Demo: https://react-rev-rust.vercel.app/
 
-### Access Details
-Visit: https://react-rev-rust.vercel.app/
-<br/>
-Username: amithkumar_10
-<br/>
-Password: React@rev
-<br/>
+- Username: user
+- Password: user123
+
+## 📚 What I Learned in React
+### 1️⃣ React Fundamentals
+- JSX
+- Components
+- Props
+- Lists & Keys
+
+### 2️⃣ React Hooks
+- useState
+- useEffect
+- useContext
+- useRef
+- Custom Hooks
+
+### 3️⃣ Routing
+- React Router
+- Route Parameters
+- Protected Routes
+- useLocation
+
+### 4️⃣ API Handling
+- GET Requests
+- POST Requests
+- PUT Requests
+- DELETE Requests
+- Search with Debouncing
+- Throttling
+
+### 5️⃣ State Management
+- Zustand
+
+### 🎯 Purpose of This Repository
+- Structured React revision
+- Hands-on implementation of concepts
+- Practical learning during internship
+
+Real-world application patterns/>
