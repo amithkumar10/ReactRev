@@ -47,5 +47,4 @@ This project serves as a complete React revision handbook — from fundamentals 
 - Structured React revision
 - Hands-on implementation of concepts
 - Practical learning during internship
-
-Real-world application patterns/>
+- Real-world application patterns
