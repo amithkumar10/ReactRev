@@ -23,7 +23,7 @@ const Navbar = () => {
 
     { title: "Routing", items: [{heading:"React Router", link:"/routing"}, {heading:"Route Params", link:"/routing"}, {heading:"Protected Routes", link:"/routing"}, {heading:"useLocation", link:"/routing"}] },
 
-    { title: "API Calls", items: [{heading:"GET", link:"/apicall"}, {heading:"POST", link:"/apicall"}, {heading:"PUT", link:"/apicall"}, {heading:"DELETE", link:"/apicall"}] },
+    { title: "API Calls", items: [{heading:"GET", link:"/apicall"}, {heading:"POST", link:"/apicall"}, {heading:"PUT", link:"/apicall"}, {heading:"DELETE", link:"/apicall"}, {heading:"SEARCH/DEBOUNCE", link:"/apicall"}, {heading:"THROTTLING", link:"/apicall"}] },
     
     { title: "Zustand", items: [{heading:"State Management", link:"/zustand"}] },
   ];
